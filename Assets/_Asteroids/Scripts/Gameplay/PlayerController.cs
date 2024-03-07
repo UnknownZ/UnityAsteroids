@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayerRigidbody();
+        if(rb.velocity.magnitude > speedMax)
+        {
+            rb.velocity = rb.velocity.normalized * speedMax;
+        }
     }
 
     private void GetInput()
